@@ -114,28 +114,66 @@ Facebook doesn't allow services directly. Use these workarounds:
 
 ---
 
-## STEP 4: AI PHONE SYSTEM (1 hour)
+## STEP 4: RETELL AI PHONE SYSTEM (1 hour)
 
-### Quick Setup (Do This First)
-1. [ ] **Google Voice number** — free, forwards to Maudi's phone
-2. [ ] Set up voicemail greeting: "Thanks for calling [Business Name]. We're either on a job or on another call. Leave your name, number, and what you need help with, and we'll call you back within 30 minutes."
-3. [ ] Both Maudi and you get notifications when calls come in
+### Deploy Retell AI Receptionist
+1. [ ] Sign up at **retellai.com**
+2. [ ] Create agent with business greeting: "Hi, you've reached [Business Name] in Jacksonville. How can I help you today?"
+3. [ ] Configure agent to capture: caller name, address, what they need, urgency, when they're available
+4. [ ] Set up call flow: Rings Maudi first → if no answer in 4 rings → Retell AI picks up
+5. [ ] Configure post-call actions: sends lead details to you + Maudi via text/email
+6. [ ] Get a local Jacksonville number (904 area code) through Retell
+7. [ ] Test the full flow: call the number, verify AI picks up, verify lead notification arrives
+8. [ ] Estimated cost: $0.07-0.15/min — roughly $50-150/month based on volume
 
-### Better Setup (Do This Week)
-1. [ ] **OpenPhone** ($15/mo) or **Grasshopper** ($14/mo) — business phone line with auto-attendant
-2. [ ] Set up call forwarding: Rings Maudi first → if no answer, rolls to AI voicemail → texts you both
-3. [ ] Auto-text reply to missed calls: "Hey! Thanks for calling [Business Name]. We're on another call — what do you need help with? We'll get back to you in the next 30 minutes."
-
-### Best Setup (Next Week)
-1. [ ] Deploy AI receptionist (Bland.ai or Vapi.ai — $0.07-0.12/min)
-2. [ ] AI answers: "Hi, you've reached [Business Name], how can I help you today?"
-3. [ ] AI captures: name, address, what they need, when they're available
-4. [ ] AI books into calendar or texts you the lead details
-5. [ ] Estimated cost: $50-100/month based on call volume
+### Connect to Ops Home Base
+- [ ] Clone ops-home-base: `git clone https://github.com/jbellsolutions/ops-home-base.git`
+- [ ] Connect ClickUp via MCP (track leads, jobs, tasks)
+- [ ] Connect Gmail via MCP (lead notifications, outreach)
+- [ ] Connect Google Calendar via MCP (job scheduling)
+- [ ] Use Claude Code as the command channel — manage everything from one place
+- [ ] All leads from Retell AI → ClickUp task → assign to Maudi → schedule on calendar
 
 ---
 
-## STEP 5: LOCAL OUTREACH (Start This Week, Do Weekly)
+## STEP 5: DEPLOY BUSINESS PAGES (1-2 hours)
+
+### Google Business Profile (HIGHEST PRIORITY — Do This First)
+1. [ ] Go to **business.google.com** → "Manage now"
+2. [ ] Business name: [BUSINESS NAME]
+3. [ ] Category: **Handyman** (primary). Add secondary: "Wildlife removal service," "Roofing contractor," "Property maintenance"
+4. [ ] Service area: Jacksonville, Orange Park, Middleburg, St. Augustine, Fleming Island
+5. [ ] Use the Retell AI phone number as your business phone
+6. [ ] Add business hours (Mon-Sat 7am-7pm or whatever you want)
+7. [ ] Upload 10+ photos (job sites, truck, team, before/after)
+8. [ ] Write business description hitting all 4 services
+9. [ ] Add all 4 services with descriptions
+10. [ ] Verify by postcard (takes 5-7 days) or phone if eligible
+11. [ ] Once verified: post a Google Update (like a social post) each week
+
+### Nextdoor Business Page
+1. [ ] Go to **business.nextdoor.com** → "Claim your free business page"
+2. [ ] Same business info as Google (name, phone, area, services)
+3. [ ] Upload photos
+4. [ ] Set up notifications so you see job requests from neighbors immediately
+5. [ ] Respond to EVERY recommendation request in your service area
+
+### Porch.com
+1. [ ] Go to **porch.com/pro** → Sign up as a professional
+2. [ ] Complete full profile — Porch gives you a quality score; 100% completion = more leads
+3. [ ] List all 4 services, add photos, insurance info
+4. [ ] Check for any free lead credits on signup
+5. [ ] Set your service area to Jacksonville metro
+
+### Other Platforms (This Week)
+- [ ] **Yelp** — biz.yelp.com → Claim free listing
+- [ ] **Home Depot Pro Referral** — homedepot.com/pro-referral → Register
+- [ ] **BuildZoom** — buildzoom.com → Sign up (only pay 2.5% if hired)
+- [ ] **Houzz** — houzz.com → Create pro profile, upload project photos
+
+---
+
+## STEP 6: LOCAL OUTREACH (Start This Week, Do Weekly)
 
 ### Property Managers — Cold Call/Email
 1. [ ] Google "Jacksonville property management companies"
@@ -177,7 +215,7 @@ Facebook doesn't allow services directly. Use these workarounds:
 |------|------|-------|
 | Craigslist ads (7/day × 3 days) | $105–$210 | $5/ad CL fee + service fee |
 | Facebook Marketplace | $0 | Free listings |
-| Google Voice | $0 | Free |
+| Retell AI phone | ~$20-30 | Based on call volume |
 | Google Business Profile | $0 | Free |
 | Nextdoor | $0 | Free |
 | Porch/Yelp/etc | $0 | Free |
@@ -189,9 +227,9 @@ Facebook doesn't allow services directly. Use these workarounds:
 |------|------|
 | Craigslist (7 ads × 3 days/week × 4 weeks) | $420–$840 |
 | FB Marketplace | $0 (or $150-450 for paid ads) |
-| Phone system (OpenPhone) | $15 |
-| AI receptionist (if deployed) | $50–$100 |
-| **Total Monthly** | **$485–$1,000** |
+| Retell AI phone system | $50–$150 |
+| Ops Home Base (Claude Code) | $0 (covered by Justin) |
+| **Total Monthly** | **$520–$1,040** |
 
 ---
 
