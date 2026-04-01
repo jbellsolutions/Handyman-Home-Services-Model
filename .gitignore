@@ -2,4 +2,28 @@
 *.swp
 *.swo
 *~
+
+# Credentials — NEVER commit
 .env
+automation/.env
+
+# Runtime data
+automation/data/
+automation/logs/
+automation/profiles/
+automation/screenshots/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+*.egg-info/
+
+# Node (if any)
+node_modules/
+
+# IDE
+.vscode/
+.idea/

@@ -3,14 +3,10 @@
 
 ---
 
-## BEFORE YOU START (30 min)
+## BEFORE YOU START (15 min)
 
 ### Get These Ready First
 - [ ] **Photos:** 4-8 photos per service (wildlife, roofing, handyman, property maintenance). Before/after shots, you at work, your truck. If you don't have enough yet, use stock photos temporarily — replace with real ones ASAP
-- [ ] **Phone number:** Decide on tracking. Options:
-  - Simple: Use your real number for now, get tracking later
-  - Better: Set up a Google Voice number (free) — forward to your phone
-  - Best: CallRail tracking number ($45/mo) — separate number per service type
 - [ ] **Business name:** Decide what name(s) to use on ads. Can use multiple (helps with Craigslist variety): e.g., "Jax Wildlife Solutions," "Northeast FL Handyman," "Duval Property Maintenance"
 - [ ] **Your rates:** Know what you're charging before calls come in:
   - Wildlife removal: $150–$400 per job
@@ -20,10 +16,49 @@
 
 ---
 
-## STEP 1: CRAIGSLIST (1-2 hours)
+## STEP 1: TRACKING NUMBER (15 min) — DO THIS FIRST
+
+### Get a call tracking number before you post anything
+You need a number on your ads that forwards to Maudi's phone, records calls, and tells you which ad generated the lead.
+
+**Option A: AvidTrak — $15/mo (BEST VALUE — Start Here)**
+1. [ ] Go to **avidtrak.com** → Start 14-day free trial (no credit card required)
+2. [ ] Get a **904 area code** number (Jacksonville local)
+3. [ ] Set it to forward to Maudi's cell phone
+4. [ ] Enable call recording + AI transcription (included)
+5. [ ] Label the number by campaign (e.g., "CL Wildlife," "CL Roofing") — this is how you'll know which ads work
+6. [ ] Test it — call the number, verify it forwards AND records
+7. [ ] Use this number on ALL ads. Get additional numbers ($2-3/number) for different campaigns later
+8. [ ] After 14-day trial: $15/mo, no contract, cancel anytime
+
+**What you get for $15/mo:**
+- Call recording with AI transcription (know exactly what callers said)
+- Source tracking (which ad/campaign generated each call)
+- Spam call blocking
+- Call forwarding to Maudi's cell
+- No setup fees, no contracts
+
+**Option B: CallScaler — $29/mo (If You Want More Numbers)**
+- Numbers are only $0.50 each — good for putting a different number on every ad
+- Call recording + AI transcription + call summaries
+- [ ] Sign up at **callscaler.com**
+- [ ] Create numbers for each service type (wildlife, roofing, handyman, maintenance)
+- [ ] Forward all to Maudi's phone
+
+**Option C: CallRail — $45/mo (Upgrade Later When Revenue Justifies It)**
+- Industry standard, most features, best reporting
+- Dynamic number insertion for websites
+- [ ] Upgrade to CallRail once you're doing $5K+/month
+
+**Start with AvidTrak. $15/mo, records calls, tracks sources, 14-day free trial. Done.**
+
+---
+
+## STEP 2: CRAIGSLIST (1-2 hours)
 
 ### Option A: Use a Posting Service (Easiest — Do This If You Want Leads Tomorrow)
 1. [ ] Go to **craigslistdominator.com** → Sign up → Get $10 free credit
+   - Use your **AvidTrak tracking number from Step 1** on all ads
 2. [ ] Fund account with $70–$100 (enough for 7-10 ads)
 3. [ ] Submit your 7 ads for Jacksonville:
 
@@ -59,7 +94,7 @@
 
 ---
 
-## STEP 2: FACEBOOK MARKETPLACE (1 hour)
+## STEP 3: FACEBOOK MARKETPLACE (1 hour)
 
 ### Post 7 Product-Style Listings
 Facebook doesn't allow services directly. Use these workarounds:
@@ -90,60 +125,14 @@ Facebook doesn't allow services directly. Use these workarounds:
 
 ---
 
-## STEP 3: FREE PLATFORMS (30-45 min)
+## STEP 4: DEPLOY BUSINESS PAGES (1-2 hours)
 
-### Sign up for these TODAY — all free:
-
-| Platform | Time to Sign Up | Action | Link |
-|----------|----------------|--------|------|
-| [ ] **Google Business Profile** | 15 min | Create listing for all 4 services, add photos | business.google.com |
-| [ ] **Nextdoor** | 10 min | Claim business page, set up service area | business.nextdoor.com |
-| [ ] **Yelp** | 10 min | Claim free business listing | biz.yelp.com |
-| [ ] **Porch.com** | 10 min | Sign up, complete profile — may get free leads to start | porch.com/pro |
-
-### Sign up for these THIS WEEK:
-
-| Platform | Action |
-|----------|--------|
-| [ ] **Home Depot Pro Referral** | Register at homedepot.com/pro-referral |
-| [ ] **BuildZoom** | Sign up — only pay 2.5% if you actually get hired |
-| [ ] **Houzz** | Create free profile, upload project photos |
-| [ ] **Alignable** | Local business networking — free |
-| [ ] **Locanto** | Post free classified ads |
-| [ ] **ClassifiedAds.com** | Post free classified ads |
-
----
-
-## STEP 4: RETELL AI PHONE SYSTEM (1 hour)
-
-### Deploy Retell AI Receptionist
-1. [ ] Sign up at **retellai.com**
-2. [ ] Create agent with business greeting: "Hi, you've reached [Business Name] in Jacksonville. How can I help you today?"
-3. [ ] Configure agent to capture: caller name, address, what they need, urgency, when they're available
-4. [ ] Set up call flow: Rings Maudi first → if no answer in 4 rings → Retell AI picks up
-5. [ ] Configure post-call actions: sends lead details to you + Maudi via text/email
-6. [ ] Get a local Jacksonville number (904 area code) through Retell
-7. [ ] Test the full flow: call the number, verify AI picks up, verify lead notification arrives
-8. [ ] Estimated cost: $0.07-0.15/min — roughly $50-150/month based on volume
-
-### Connect to Ops Home Base
-- [ ] Clone ops-home-base: `git clone https://github.com/jbellsolutions/ops-home-base.git`
-- [ ] Connect ClickUp via MCP (track leads, jobs, tasks)
-- [ ] Connect Gmail via MCP (lead notifications, outreach)
-- [ ] Connect Google Calendar via MCP (job scheduling)
-- [ ] Use Claude Code as the command channel — manage everything from one place
-- [ ] All leads from Retell AI → ClickUp task → assign to Maudi → schedule on calendar
-
----
-
-## STEP 5: DEPLOY BUSINESS PAGES (1-2 hours)
-
-### Google Business Profile (HIGHEST PRIORITY — Do This First)
+### Google Business Profile (HIGHEST PRIORITY)
 1. [ ] Go to **business.google.com** → "Manage now"
 2. [ ] Business name: [BUSINESS NAME]
 3. [ ] Category: **Handyman** (primary). Add secondary: "Wildlife removal service," "Roofing contractor," "Property maintenance"
 4. [ ] Service area: Jacksonville, Orange Park, Middleburg, St. Augustine, Fleming Island
-5. [ ] Use the Retell AI phone number as your business phone
+5. [ ] Use the **AvidTrak tracking number from Step 1** as your business phone
 6. [ ] Add business hours (Mon-Sat 7am-7pm or whatever you want)
 7. [ ] Upload 10+ photos (job sites, truck, team, before/after)
 8. [ ] Write business description hitting all 4 services
@@ -165,11 +154,40 @@ Facebook doesn't allow services directly. Use these workarounds:
 4. [ ] Check for any free lead credits on signup
 5. [ ] Set your service area to Jacksonville metro
 
-### Other Platforms (This Week)
+### Other Free Platforms (This Week)
 - [ ] **Yelp** — biz.yelp.com → Claim free listing
 - [ ] **Home Depot Pro Referral** — homedepot.com/pro-referral → Register
 - [ ] **BuildZoom** — buildzoom.com → Sign up (only pay 2.5% if hired)
 - [ ] **Houzz** — houzz.com → Create pro profile, upload project photos
+- [ ] **Alignable** — Local business networking — free
+- [ ] **Locanto** — Post free classified ads
+- [ ] **ClassifiedAds.com** — Post free classified ads
+
+---
+
+## STEP 5: RETELL AI PHONE SYSTEM (Do This After Steps 1-4 Are Running)
+
+### Why Wait?
+AvidTrak handles tracking and recording. Retell AI is the next upgrade — AI answers missed calls, captures lead info automatically, sends you notifications. Set this up once you're getting consistent calls and want to stop missing any.
+
+### Deploy Retell AI Receptionist
+1. [ ] Sign up at **retellai.com**
+2. [ ] Create agent with business greeting: "Hi, you've reached [Business Name] in Jacksonville. How can I help you today?"
+3. [ ] Configure agent to capture: caller name, address, what they need, urgency, when they're available
+4. [ ] Set up call flow: Rings Maudi first → if no answer in 4 rings → Retell AI picks up
+5. [ ] Configure post-call actions: sends lead details to you + Maudi via text/email
+6. [ ] Port your Google Voice number OR get a new 904 number through Retell
+7. [ ] Update all live ads with the new number (if changed)
+8. [ ] Test the full flow: call the number, verify AI picks up, verify lead notification arrives
+9. [ ] Estimated cost: $0.07-0.15/min — roughly $50-150/month based on volume
+
+### Connect to Ops Home Base
+- [ ] Clone ops-home-base: `git clone https://github.com/jbellsolutions/ops-home-base.git`
+- [ ] Connect ClickUp via MCP (track leads, jobs, tasks)
+- [ ] Connect Gmail via MCP (lead notifications, outreach)
+- [ ] Connect Google Calendar via MCP (job scheduling)
+- [ ] Use Claude Code as the command channel — manage everything from one place
+- [ ] All leads from Retell AI → ClickUp task → assign to Maudi → schedule on calendar
 
 ---
 
@@ -213,9 +231,9 @@ Facebook doesn't allow services directly. Use these workarounds:
 
 | Item | Cost | Notes |
 |------|------|-------|
+| AvidTrak call tracking number | $0 (14-day trial) then $15/mo | Records calls, tracks sources, forwards to Maudi |
 | Craigslist ads (7/day × 3 days) | $105–$210 | $5/ad CL fee + service fee |
 | Facebook Marketplace | $0 | Free listings |
-| Retell AI phone | ~$20-30 | Based on call volume |
 | Google Business Profile | $0 | Free |
 | Nextdoor | $0 | Free |
 | Porch/Yelp/etc | $0 | Free |
@@ -227,17 +245,19 @@ Facebook doesn't allow services directly. Use these workarounds:
 |------|------|
 | Craigslist (7 ads × 3 days/week × 4 weeks) | $420–$840 |
 | FB Marketplace | $0 (or $150-450 for paid ads) |
-| Retell AI phone system | $50–$150 |
+| AvidTrak call tracking (or CallRail upgrade $45/mo) | $15–$45 |
+| Retell AI (add later when call volume justifies it) | $50–$150 |
 | Ops Home Base (Claude Code) | $0 (covered by Justin) |
-| **Total Monthly** | **$520–$1,040** |
+| **Total Monthly** | **$485–$1,050** |
 
 ---
 
 ## WHAT SUCCESS LOOKS LIKE
 
 ### Week 1:
+- AvidTrak tracking number live, recording calls, forwarding to Maudi
 - 7 CL ads live, 7 FB listings live
-- Phone system answering calls
+- Google Business Profile submitted for verification
 - 5-15 inbound leads
 - 1-3 jobs booked
 
@@ -258,10 +278,12 @@ Facebook doesn't allow services directly. Use these workarounds:
 
 ## RIGHT NOW — PICK ONE AND START
 
-**If you have 30 minutes:** Sign up for Craigslist Dominator, submit your first ad. One ad. Just get one live.
+**If you have 10 minutes:** Sign up for AvidTrak free trial (Step 1). Now you have a tracking number for ads.
 
-**If you have 1 hour:** Submit 3-4 CL ads + post 2-3 FB Marketplace listings.
+**If you have 30 minutes:** AvidTrak + sign up for Craigslist Dominator + submit your first ad.
 
-**If you have 2 hours:** All 7 CL ads + all 7 FB listings + Google Business Profile + Nextdoor.
+**If you have 1 hour:** AvidTrak + 3-4 CL ads + 2-3 FB Marketplace listings.
 
-Don't overthink it. Post the ads, answer the phone, book the jobs.
+**If you have 2 hours:** All of the above + Google Business Profile + Nextdoor.
+
+Don't overthink it. Get the number, post the ads, answer the phone, book the jobs.
