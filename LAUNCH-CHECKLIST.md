@@ -165,7 +165,45 @@ Facebook doesn't allow services directly. Use these workarounds:
 
 ---
 
-## STEP 5: RETELL AI PHONE SYSTEM (Do This After Steps 1-4 Are Running)
+## STEP 5: BUSINESS OS (Do This Once Leads Are Coming In — 20 min)
+
+### Why?
+You're getting leads. Now you need to organize them — who called, what they need, who's going, did they pay, how much did you make. The Business OS replaces spreadsheets with a system you talk to.
+
+### What You Need First
+- [ ] **ClickUp account** (free plan works) — clickup.com
+- [ ] **Google Calendar** — you already have this
+- [ ] **Gmail** — you already have this
+- [ ] **Claude Code with MCP integrations** — ClickUp, Google Calendar, Gmail
+
+### Setup (Say This in Claude Code)
+1. [ ] Open Claude Code in this repo
+2. [ ] Say: **"Set up the business OS"**
+3. [ ] Claude will ask about your team (who does marketing, who does field work, business manager)
+4. [ ] Claude will ask about your profit split (default: 35% marketing / 65% field)
+5. [ ] Claude creates your ClickUp structure automatically:
+   - Lead Pipeline (New Leads → Quotes → Active Jobs → Follow-Ups)
+   - Operations (Weekly Schedule, Team Management, Equipment)
+   - Finance (Revenue, Expenses, Payouts)
+6. [ ] Claude connects your Google Calendar for job scheduling
+7. [ ] Claude confirms your Gmail for customer emails
+
+### Once Set Up, Your Daily Ops Look Like This:
+- **Morning:** Say "morning briefing" → see new leads, today's schedule, follow-ups due
+- **New lead comes in:** Say "new lead: [details]" → tracked in ClickUp
+- **Customer says yes:** Say "book [customer] for [date/time], assign to [worker]" → calendar + ClickUp + confirmation email
+- **Job done:** Say "job complete: [customer], collected $[amount]" → logged, split calculated, review request sent
+- **End of week:** Say "P&L this month" → full financial report
+
+### Full Operations Manual
+- [ ] Read `ops/BUSINESS-OS-GUIDE.md` — every command explained with examples
+- [ ] Open `ops/dashboard.html` in your browser for a visual overview
+
+**This is optional.** Lead gen works without it. But once you're doing 3+ jobs a week, you'll want this.
+
+---
+
+## STEP 6: RETELL AI PHONE SYSTEM (Do This After Steps 1-4 Are Running)
 
 ### Why Wait?
 AvidTrak handles tracking and recording. Retell AI is the next upgrade — AI answers missed calls, captures lead info automatically, sends you notifications. Set this up once you're getting consistent calls and want to stop missing any.
@@ -191,7 +229,7 @@ AvidTrak handles tracking and recording. Retell AI is the next upgrade — AI an
 
 ---
 
-## STEP 6: LOCAL OUTREACH (Start This Week, Do Weekly)
+## STEP 7: LOCAL OUTREACH (Start This Week, Do Weekly)
 
 ### Property Managers — Cold Call/Email
 1. [ ] Google "Jacksonville property management companies"

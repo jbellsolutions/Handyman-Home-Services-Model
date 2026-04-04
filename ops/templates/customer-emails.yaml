@@ -1,0 +1,89 @@
+# Customer Email Templates
+# Used by Claude Code when sending confirmations, reminders, and follow-ups
+# Placeholders: {customer_name}, {service}, {date}, {time}, {worker_name},
+#               {business_name}, {phone}, {address}, {amount}, {review_link}
+
+templates:
+
+  booking_confirmation:
+    subject: "Your {service} appointment is confirmed — {date}"
+    body: |
+      Hi {customer_name},
+
+      This confirms your appointment:
+
+        Service: {service}
+        Date: {date}
+        Time: {time}
+        Technician: {worker_name}
+        Address: {address}
+
+      Our technician will call you 30 minutes before arrival.
+
+      If you need to reschedule, just reply to this email or call us at {phone}.
+
+      Thanks for choosing {business_name}.
+
+      {business_name}
+      {phone}
+
+  day_before_reminder:
+    subject: "Reminder: {service} appointment tomorrow at {time}"
+    body: |
+      Hi {customer_name},
+
+      Just a quick reminder — we'll be at your place tomorrow.
+
+        Service: {service}
+        Date: {date}
+        Time: {time}
+        Technician: {worker_name}
+
+      If anything changed, call or text us at {phone}.
+
+      See you tomorrow,
+      {business_name}
+
+  job_complete_review_request:
+    subject: "How did we do? Your {service} is complete"
+    body: |
+      Hi {customer_name},
+
+      Thanks for letting us handle your {service}. We hope everything looks great.
+
+      If you have a minute, we'd really appreciate a quick review. It helps other homeowners find us:
+
+      {review_link}
+
+      If anything isn't right, call us at {phone} — we'll make it right.
+
+      Thanks again,
+      {business_name}
+
+  quote_follow_up:
+    subject: "Following up on your {service} estimate"
+    body: |
+      Hi {customer_name},
+
+      I wanted to follow up on the estimate we sent for {service} at your property.
+
+      If you have any questions about the quote or want to adjust the scope, just reply here or call {phone}. Happy to work with you on it.
+
+      If you've already found someone else, no worries at all — just let me know so I can close this out.
+
+      Thanks,
+      {business_name}
+      {phone}
+
+  seasonal_checkin:
+    subject: "Time for a checkup? {business_name} is here when you need us"
+    body: |
+      Hi {customer_name},
+
+      It's been a while since we last helped you out. Just checking in — if you've got any home repairs, maintenance needs, or projects coming up, we'd love to help again.
+
+      As a past customer, you're always a priority on our schedule.
+
+      Call or text anytime: {phone}
+
+      {business_name}

@@ -1,0 +1,84 @@
+# Business OS — Operations Settings
+# This file is populated during Phase 8 setup (Business OS)
+# Claude Code fills in the IDs when creating your ClickUp structure
+
+business_os:
+  city: "Jacksonville"
+  state: "FL"
+  timezone: "America/New_York"
+
+  # --- Team ---
+  team:
+    marketing_ops:
+      name: "Justin"
+      role: "Marketing & Ops"
+      email: ""
+      phone: ""
+    field_lead:
+      name: "Maudi"
+      role: "Field Work & Estimates"
+      email: ""
+      phone: ""
+    business_manager:
+      name: "Ashley"
+      role: "Operations Manager"
+      email: ""
+      phone: ""
+    workers: []
+    # Workers get added as the business grows. Format:
+    # - name: "Worker Name"
+    #   phone: "9045551234"
+    #   services: ["handyman", "property_maintenance"]
+    #   status: "active"
+
+  # --- Financials ---
+  financials:
+    split_marketing: 0.35
+    split_field: 0.65
+    payout_frequency: "biweekly"
+    payout_day: "friday"
+    marketing_budget_monthly: 855
+    # Net profit = Revenue - expenses (materials, labor, insurance, marketing)
+    # Justin gets 35% of net profit, Maudi gets 65%
+
+  # --- ClickUp (populated during setup) ---
+  clickup:
+    workspace_id: ""
+    space_name: "Handyman Jacksonville"
+    space_id: ""
+
+    folders:
+      lead_pipeline: ""
+      operations: ""
+      finance: ""
+
+    lists:
+      new_leads: ""
+      quotes: ""
+      active_jobs: ""
+      follow_ups: ""
+      weekly_schedule: ""
+      team_management: ""
+      equipment: ""
+      revenue: ""
+      expenses: ""
+      payouts: ""
+
+  # --- Google Calendar ---
+  google_calendar:
+    job_calendar_name: "Handyman Jax - Jobs"
+    job_calendar_id: ""
+
+  # --- Gmail ---
+  gmail:
+    ops_email: ""
+    send_confirmations: true
+    send_reminders: true
+    send_review_requests: true
+
+  # --- Lead Pipeline Statuses ---
+  pipeline:
+    new_leads: ["incoming", "contacted", "qualified", "disqualified"]
+    quotes: ["needs_quote", "quote_sent", "accepted", "declined"]
+    active_jobs: ["scheduled", "in_progress", "completed", "paid"]
+    follow_ups: ["pending", "contacted", "won_repeat", "closed"]

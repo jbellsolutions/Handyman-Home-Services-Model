@@ -90,6 +90,26 @@ Start with Dominator or Fiverr. Graduate to the DIY agent when you're ready to s
 
 ---
 
+## Business OS (Optional — Manage Your Business, Not Just Leads)
+
+The lead gen system gets leads flowing. The **Business OS** is how you run the business once those leads start coming in. It connects ClickUp, Google Calendar, and Gmail so you can manage everything through natural language in Claude Code.
+
+**What it adds:**
+- **Lead pipeline** — track every lead from first contact to paid job
+- **Job scheduling** — book jobs, assign workers, manage calendar
+- **Financial tracking** — P&L reports, payout calculations, channel ROI
+- **Customer communications** — booking confirmations, reminders, review requests
+- **Team management** — add workers, track availability, assign jobs
+- **Operations dashboard** — open `ops/dashboard.html` in your browser for a visual overview
+
+**How to set it up:** During setup, after your ads are running, say "set up the business OS" and Claude walks you through connecting ClickUp, Calendar, and Gmail. Takes about 20 minutes.
+
+**It's optional.** The lead gen system works perfectly without it. Add the Business OS when you're ready to stop using spreadsheets and start managing everything from one place.
+
+See `ops/BUSINESS-OS-GUIDE.md` for the full operations manual.
+
+---
+
 ## Repo Structure
 
 ```
@@ -121,6 +141,18 @@ Start with Dominator or Fiverr. Graduate to the DIY agent when you're ready to s
 │   └── scripts/
 │       ├── setup.sh             # Dependency installer
 │       └── test_proxy.py        # Proxy connection tester
+│
+├── ops/                         # Business OS (Phase 8)
+│   ├── BUSINESS-OS-GUIDE.md     # Plain-English operations manual
+│   ├── dashboard.html           # Visual operations dashboard
+│   ├── config/
+│   │   └── ops-settings.yaml    # Team, financials, ClickUp IDs
+│   ├── templates/
+│   │   ├── customer-emails.yaml # Email templates (booking, reminder, review)
+│   │   └── job-checklist.yaml   # Per-service completion checklists
+│   └── scripts/
+│       ├── financial-report.py  # P&L, payout, and ROI reports
+│       └── lead-pipeline-sync.py # SQLite-to-ClickUp lead sync
 │
 ├── lead-gen/                    # Platform playbooks
 │   ├── HOW-TO-USE-CL-POSTING-SERVICES.md

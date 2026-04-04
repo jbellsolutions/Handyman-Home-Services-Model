@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Handyman Jacksonville — Operations Dashboard</title>
+<meta name="description" content="Business operations dashboard — leads, jobs, schedule, finances. Powered by Claude Code.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-primary: #0f1117;
+  --bg-card: #1a1d27;
+  --bg-card-hover: #1e2130;
+  --bg-elevated: #222639;
+  --border: #2d3148;
+  --border-hover: #3d4168;
+  --text-primary: #f0f1f5;
+  --text-secondary: #9ca3b8;
+  --text-muted: #6b7394;
+  --accent: #7c5cfc;
+  --accent-glow: rgba(124, 92, 252, 0.25);
+  --accent-subtle: rgba(124, 92, 252, 0.12);
+  --success: #34d399;
+  --success-glow: rgba(52, 211, 153, 0.2);
+  --warning: #fbbf24;
+  --warning-glow: rgba(251, 191, 36, 0.2);
+  --urgent: #ef4444;
+  --urgent-glow: rgba(239, 68, 68, 0.2);
+  --info: #60a5fa;
+  --info-glow: rgba(96, 165, 250, 0.2);
+  --teal: #2dd4bf;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
+  --shadow-lg: 0 10px 25px rgba(0,0,0,0.35), 0 4px 10px rgba(0,0,0,0.2);
+  --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+.container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+/* Header */
+.header {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+}
+.header-inner {
+  display: flex; justify-content: space-between; align-items: center;
+}
+.header h1 {
+  font-size: 1.5rem; font-weight: 700;
+  background: linear-gradient(135deg, var(--accent), var(--teal));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.header .subtitle { color: var(--text-muted); font-size: 0.85rem; margin-top: 2px; }
+.header .status {
+  display: flex; align-items: center; gap: 8px;
+  color: var(--success); font-size: 0.85rem; font-weight: 500;
+}
+.header .status::before {
+  content: ''; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--success); animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.85); }
+}
+
+/* Stats Row */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding: 24px 0; }
+.stat-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px;
+  transition: border-color var(--transition);
+}
+.stat-card:hover { border-color: var(--border-hover); }
+.stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+.stat-value { font-size: 2rem; font-weight: 800; margin: 4px 0; }
+.stat-change { font-size: 0.8rem; }
+.stat-change.up { color: var(--success); }
+.stat-change.down { color: var(--urgent); }
+
+/* Main Grid */
+.main-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 8px 0 32px; }
+
+/* Cards */
+.card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden;
+}
+.card-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 20px; border-bottom: 1px solid var(--border);
+}
+.card-title { font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+.card-badge {
+  font-size: 0.7rem; padding: 2px 8px; border-radius: 10px;
+  background: var(--accent-subtle); color: var(--accent); font-weight: 600;
+}
+.card-body { padding: 16px 20px; }
+
+/* List Items */
+.list-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 0; border-bottom: 1px solid var(--border);
+}
+.list-item:last-child { border-bottom: none; }
+.list-item-left { display: flex; flex-direction: column; gap: 2px; }
+.list-item-title { font-size: 0.85rem; font-weight: 500; }
+.list-item-sub { font-size: 0.75rem; color: var(--text-muted); }
+.list-item-right { text-align: right; }
+
+/* Status Badges */
+.badge {
+  display: inline-block; font-size: 0.7rem; padding: 2px 8px;
+  border-radius: 10px; font-weight: 600;
+}
+.badge-incoming { background: var(--info-glow); color: var(--info); }
+.badge-scheduled { background: var(--accent-subtle); color: var(--accent); }
+.badge-in-progress { background: var(--warning-glow); color: var(--warning); }
+.badge-completed { background: var(--success-glow); color: var(--success); }
+.badge-urgent { background: var(--urgent-glow); color: var(--urgent); }
+
+/* Quick Actions */
+.actions-section { padding: 0 0 32px; }
+.actions-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; }
+.actions-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.action-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px; text-align: center;
+  cursor: pointer; transition: all var(--transition);
+}
+.action-card:hover {
+  border-color: var(--accent); background: var(--bg-card-hover);
+  transform: translateY(-2px); box-shadow: var(--shadow-lg);
+}
+.action-icon { font-size: 1.8rem; margin-bottom: 8px; }
+.action-label { font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); }
+.action-hint { font-size: 0.7rem; color: var(--text-muted); margin-top: 4px; }
+
+/* Financial Summary */
+.finance-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 0; border-bottom: 1px solid var(--border);
+}
+.finance-row:last-child { border-bottom: none; }
+.finance-label { font-size: 0.85rem; color: var(--text-secondary); }
+.finance-value { font-size: 0.9rem; font-weight: 600; }
+.finance-value.revenue { color: var(--success); }
+.finance-value.expense { color: var(--urgent); }
+.finance-value.profit { color: var(--accent); font-size: 1.1rem; }
+
+/* Split Display */
+.split-row { display: flex; gap: 12px; margin-top: 12px; }
+.split-card {
+  flex: 1; background: var(--bg-elevated); border-radius: var(--radius-sm);
+  padding: 12px; text-align: center;
+}
+.split-name { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; }
+.split-pct { font-size: 0.7rem; color: var(--text-muted); }
+.split-amount { font-size: 1.2rem; font-weight: 700; margin-top: 4px; color: var(--success); }
+
+/* Footer */
+.footer {
+  text-align: center; padding: 24px 0; border-top: 1px solid var(--border);
+  color: var(--text-muted); font-size: 0.75rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .main-grid { grid-template-columns: 1fr; }
+  .actions-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="container header-inner">
+    <div>
+      <h1>Handyman Jacksonville</h1>
+      <div class="subtitle">Operations Dashboard &mdash; Powered by Claude Code</div>
+    </div>
+    <div class="status">Connected</div>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Stats Row -->
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-label">Leads This Week</div>
+      <div class="stat-value">12</div>
+      <div class="stat-change up">+3 from last week</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Jobs Booked</div>
+      <div class="stat-value">7</div>
+      <div class="stat-change up">+2 from last week</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Revenue This Period</div>
+      <div class="stat-value">$4,250</div>
+      <div class="stat-change up">On track</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Active Workers</div>
+      <div class="stat-value">2</div>
+      <div class="stat-change">Maudi + 1 sub</div>
+    </div>
+  </div>
+
+  <!-- Main Content Grid -->
+  <div class="main-grid">
+
+    <!-- Left: Job Schedule -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Today's Schedule</div>
+        <span class="card-badge">3 jobs</span>
+      </div>
+      <div class="card-body">
+        <div class="list-item">
+          <div class="list-item-left">
+            <div class="list-item-title">Johnson — Roof Leak Repair</div>
+            <div class="list-item-sub">123 Main St, 32246 &bull; Maudi</div>
+          </div>
+          <div class="list-item-right">
+            <span class="badge badge-in-progress">9:00 AM</span>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="list-item-left">
+            <div class="list-item-title">Williams — Wildlife Removal</div>
+            <div class="list-item-sub">456 Oak Ave, 32225 &bull; Maudi</div>
+          </div>
+          <div class="list-item-right">
+            <span class="badge badge-scheduled">1:00 PM</span>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="list-item-left">
+            <div class="list-item-title">Davis Property — Make Ready</div>
+            <div class="list-item-sub">789 Pine Rd, 32210 &bull; Mike R.</div>
+          </div>
+          <div class="list-item-right">
+            <span class="badge badge-scheduled">2:30 PM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Lead Pipeline -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Lead Pipeline</div>
+        <span class="card-badge">5 active</span>
+      </div>
+      <div class="card-body">
+        <div class="list-item">
+          <div class="list-item-left">
+            <div class="list-item-title">Thompson — Handyman Work</div>
+            <div class="list-item-sub">Craigslist &bull; Called 2h ago</div>
+          </div>
+          <div class="list-item-right">
+            <span class="badge badge-incoming">New</span>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="list-item-left">
+            <div class="list-item-title">Garcia — Pressure Washing</div>
+            <div class="list-item-sub">Facebook &bull; Quote: $250</div>
+          </div>
+          <div class="list-item-right">
+            <span class="badge badge-scheduled">Quote Sent</span>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="list-item-left">
+            <div class="list-item-title">Brown — Raccoon in Attic</div>
+            <div class="list-item-sub">Nextdoor &bull; Urgent</div>
+          </div>
+          <div class="list-item-right">
+            <span class="badge badge-urgent">Urgent</span>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="list-item-left">
+            <div class="list-item-title">Lee — Fence Repair</div>
+            <div class="list-item-sub">Google &bull; Quote: $400</div>
+          </div>
+          <div class="list-item-right">
+            <span class="badge badge-completed">Accepted</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Left: Financial Summary -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Financial Summary</div>
+        <span class="card-badge">This Period</span>
+      </div>
+      <div class="card-body">
+        <div class="finance-row">
+          <div class="finance-label">Revenue</div>
+          <div class="finance-value revenue">$4,250</div>
+        </div>
+        <div class="finance-row">
+          <div class="finance-label">Materials & Labor</div>
+          <div class="finance-value expense">-$1,200</div>
+        </div>
+        <div class="finance-row">
+          <div class="finance-label">Marketing (CL + Tracking)</div>
+          <div class="finance-value expense">-$450</div>
+        </div>
+        <div class="finance-row">
+          <div class="finance-label">Net Profit</div>
+          <div class="finance-value profit">$2,600</div>
+        </div>
+
+        <div class="split-row">
+          <div class="split-card">
+            <div class="split-name">Justin</div>
+            <div class="split-pct">35%</div>
+            <div class="split-amount">$910</div>
+          </div>
+          <div class="split-card">
+            <div class="split-name">Maudi</div>
+            <div class="split-pct">65%</div>
+            <div class="split-amount">$1,690</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Customer Messages -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Recent Messages</div>
+        <span class="card-badge">3 unread</span>
+      </div>
+      <div class="card-body">
+        <div class="list-item">
+          <div class="list-item-left">
+            <div class="list-item-title">Sarah Johnson</div>
+            <div class="list-item-sub">"What time will the technician arrive?"</div>
+          </div>
+          <div class="list-item-right">
+            <span class="badge badge-incoming">10m ago</span>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="list-item-left">
+            <div class="list-item-title">Mark Thompson</div>
+            <div class="list-item-sub">"Can you also look at the drywall?"</div>
+          </div>
+          <div class="list-item-right">
+            <span class="badge badge-incoming">1h ago</span>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="list-item-left">
+            <div class="list-item-title">Sunrise Property Mgmt</div>
+            <div class="list-item-sub">"We have 3 units needing turnover"</div>
+          </div>
+          <div class="list-item-right">
+            <span class="badge badge-urgent">3h ago</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Quick Actions -->
+  <div class="actions-section">
+    <h2>Quick Actions</h2>
+    <div class="actions-grid">
+      <div class="action-card">
+        <div class="action-icon">&#9728;</div>
+        <div class="action-label">Morning Briefing</div>
+        <div class="action-hint">"Morning briefing"</div>
+      </div>
+      <div class="action-card">
+        <div class="action-icon">&#128197;</div>
+        <div class="action-label">Book a Job</div>
+        <div class="action-hint">"Book [name] for [date]"</div>
+      </div>
+      <div class="action-card">
+        <div class="action-icon">&#9989;</div>
+        <div class="action-label">Job Complete</div>
+        <div class="action-hint">"Job complete: [name], $[amt]"</div>
+      </div>
+      <div class="action-card">
+        <div class="action-icon">&#128200;</div>
+        <div class="action-label">P&amp;L Report</div>
+        <div class="action-hint">"P&amp;L this month"</div>
+      </div>
+      <div class="action-card">
+        <div class="action-icon">&#128222;</div>
+        <div class="action-label">New Lead</div>
+        <div class="action-hint">"New lead: [details]"</div>
+      </div>
+      <div class="action-card">
+        <div class="action-icon">&#128176;</div>
+        <div class="action-label">Calculate Payout</div>
+        <div class="action-hint">"Calculate biweekly payout"</div>
+      </div>
+      <div class="action-card">
+        <div class="action-icon">&#128101;</div>
+        <div class="action-label">Add Worker</div>
+        <div class="action-hint">"Add new worker: [name]"</div>
+      </div>
+      <div class="action-card">
+        <div class="action-icon">&#11088;</div>
+        <div class="action-label">Request Review</div>
+        <div class="action-hint">"Send review request to [name]"</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    Handyman Jacksonville &mdash; Business OS &mdash; Open Claude Code and talk to manage everything
+  </div>
+</footer>
+
+</body>
+</html>

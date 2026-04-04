@@ -1,0 +1,65 @@
+# Job Completion Checklists
+# Used by the business manager to verify work before marking "complete"
+# Claude walks through these when the user says "job complete"
+
+checklists:
+
+  wildlife_removal:
+    name: "Wildlife Removal"
+    items:
+      - "Animal(s) successfully removed or trapped"
+      - "Entry points identified and sealed (exclusion work)"
+      - "Attic/crawlspace cleaned if included in scope"
+      - "Traps retrieved (none left on property)"
+      - "Customer walked through what was done"
+      - "Before/after photos taken (minimum 4)"
+      - "Area cleaned up — no debris or materials left"
+      - "Payment collected"
+
+  roof_repair:
+    name: "Roof Repair"
+    items:
+      - "Leak source identified and repaired"
+      - "Damaged shingles/flashing replaced"
+      - "No visible damage remaining from ground level"
+      - "Interior checked — no active water intrusion"
+      - "Debris and old materials cleaned up"
+      - "Gutters cleared if in scope"
+      - "Before/after photos taken (minimum 4)"
+      - "Customer walked through repair from ground"
+      - "Payment collected"
+
+  general_handyman:
+    name: "General Handyman"
+    items:
+      - "All items on work order completed"
+      - "Work area cleaned — no dust, debris, or scraps"
+      - "Customer inspected and approved work"
+      - "Before/after photos taken (minimum 2 per task)"
+      - "Any leftover materials offered to customer or removed"
+      - "Payment collected"
+
+  property_maintenance:
+    name: "Property Maintenance"
+    items:
+      - "All items on PM's maintenance list completed"
+      - "Photos taken of each completed item"
+      - "Property left clean and locked (if vacant)"
+      - "Keys returned to PM if applicable"
+      - "Detailed invoice/report ready for PM"
+      - "Any issues found but not in scope documented and reported"
+      - "Payment collected or invoiced per PM agreement"
+
+  turnover_make_ready:
+    name: "Turnover / Make-Ready"
+    items:
+      - "All rooms painted (if in scope)"
+      - "Holes patched and walls smooth"
+      - "Fixtures working (lights, faucets, outlets)"
+      - "Doors and locks functional"
+      - "Appliances tested and clean"
+      - "Deep clean completed (or scheduled separately)"
+      - "Carpet cleaned or replaced (if in scope)"
+      - "Exterior curb appeal items done (pressure wash, landscaping)"
+      - "Full property walkthrough photos (every room)"
+      - "PM notified that unit is ready for showing"
